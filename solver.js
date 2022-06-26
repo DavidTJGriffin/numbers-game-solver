@@ -1,72 +1,109 @@
-var factorDividers = Array.from(Array(1000).keys())
+var factorDividers = []
+let multiplesArray = []
+let additionsArray = []
+let subtractionsArray = []
 
-let target = 800
+// let operationsText = document.getElementById('operation')
 
-let factors = []
-
-let numberList = [100, 2, 6]
-
-let operationsText = document.getElementById('operation')
-
-let result = [];
+// let result = [];
 
 let resultFactors = [];
 
-function getFactors(target, array, newArray) {
-    for (let index = 0; index < array.length; index++) {
-        const number = array[index];
-
-        let dividingResult = target / number
-        if (target % number === 0) {
-            newArray.push(dividingResult)
+function getFactors(number) {
+    factorsArray = [];
+    factorDividers = Array.from({ length: number }, (_, i) => i + 1)
+    for (let index = 0; index < factorDividers.length; index++) {
+        const divisor = factorDividers[index];
+        let dividingResult = number / divisor
+        if (number % divisor === 0) {
+            factorsArray.push(dividingResult)
+            factorsArray.sort((a, b) => a - b)
         }
     }
+    return factorsArray;
 }
 
-function multiplyCase() {
+
+function getAdditions(number) {
+    additionsArray = Array.from({ length: number }, (_, i) => i + 1);
+    if (number > 10) {
+        return [number]
+    }
+    return additionsArray;
+};
+
+function getSubtractions(number) {
+    let smallNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    subtractionsArray = []
+    let result;
+    // a - b = 6
+    
+    smallNumbers.forEach(element => {
+        result = element - number
+    });
+    if (smallNumbers.includes(result)) {
+
+    }
+    // for (let index = 0; index < smallNumbers.length; index++) {
+    //     var element = smallNumbers[index];
+    //     result = Math.abs(element - number)
+    //     if (smallNumbers.includes(result) && result != 0) {
+    //         subtractionsArray.push(element)
+    //     }
+    // }
+    if (number >= 10) {
+        return [number]
+    }
+    return subtractionsArray;
+};
+
+function getMultiples(number) {
+    multiplesDivider = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 25, 50, 75, 100];
+    multiplesArray = [];
+    for (let index = 0; index < multiplesDivider.length; index++) {
+        const divisor = multiplesDivider[index];
+        if (divisor % number === 0) {
+            multiplesArray.push(divisor)
+            multiplesArray.sort((a, b) => a - b)
+        }
+    }
+    return multiplesArray;
+}
+getSubtractions(6)
+// var numbers = []
+// var operationString = ''
+function numbersSolver(target, numberList) {
     var result;
     var number;
+  
+    getFactors(target)
     for (let index = 0; index < numberList.length; index++) {
         number = numberList[index];
         if (numberList.includes(number) && target % number === 0) {
             result = target / number
         }
         if (numberList.includes(result)) {
-            operationsText.textContent = `Operation is: ${result} * ${number}`
+            return `${result}*${number}`
+        }
+        if (numberList.includes(result) === false && result <=10) {
+            getAdditions(result)
+        }
+        if (additionsArray.includes(number)) {
+            console.log('number is: ' + number)
+            console.log('result is: '+ result)
+            //expected: 'result is: 8'
+            //actual: 'result is: 400'
+            var outcome = result - number
+            console.log('outcome is: '+ outcome)
+            // expected: 'outcome is: 6'
+            //           'outcome is: 2'
+            // actual: 'outcome is: 398'
+            //         'outcome is: 394'
+            console.log(number)
         }
     }
 }
 
-function multiplyBySumCase() {
-    var result;
-    var number;
-    var quantityOfNumbersNotDivisible = 0
-
-    for (let index = 0; index < numberList.length; index++) {
-        number = numberList[index];
-        if (target % number != 0) {
-            quantityOfNumbersNotDivisible ++
-        }
-    }
-    for (let index = 0; index < numberList.length-quantityOfNumbersNotDivisible; index++) {
-        number = numberList[index];
-        if (numberList.includes(number) && target % number === 0) {
-            result = target / number
-        }
-        if (numberList.includes(result)) {
-            operationsText.textContent = `Operation is: ${result} * ${number}`
-        }
-        if (!numberList.includes(result)) {
-            factorDividers = Array.from(Array(result).keys())
-            getFactors(result, factorDividers, resultFactors)
-            console.log(resultFactors);
-        }
-    }
-
-    console.log(resultFactors);
-}
-console.log(factors)
-getFactors(target, factorDividers, factors)
-multiplyCase()
-multiplyBySumCase()
-
+numbersSolver(800, [100, 2, 6])
+// numbersSolver(900, [100, 8, 100])
+module.exports = { getFactors, getAdditions, getSubtractions, getMultiples, numbersSolver };
