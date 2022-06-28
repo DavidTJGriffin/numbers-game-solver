@@ -37,7 +37,7 @@ function getSubtractions(number) {
     subtractionsArray = []
     let result;
     // a - b = 6
-    
+
     smallNumbers.forEach(element => {
         result = element - number
     });
@@ -75,35 +75,38 @@ getSubtractions(6)
 function numbersSolver(target, numberList) {
     var result;
     var number;
-  
+    var newResult;
     getFactors(target)
     for (let index = 0; index < numberList.length; index++) {
         number = numberList[index];
+        result = target / number
         if (numberList.includes(number) && target % number === 0) {
-            result = target / number
+            
+            // console.log('1st if, with result: '+ result)
         }
         if (numberList.includes(result)) {
+            // console.log('2nd if')
             return `${result}*${number}`
         }
-        if (numberList.includes(result) === false && result <=10) {
+        if (numberList.includes(result) === false && result <= 10) {
             getAdditions(result)
+            newResult = result;
+            console.log('3rd if, with result: '+ result)
         }
-        if (additionsArray.includes(number)) {
-            console.log('number is: ' + number)
-            console.log('result is: '+ result)
-            //expected: 'result is: 8'
-            //actual: 'result is: 400'
-            var outcome = result - number
-            console.log('outcome is: '+ outcome)
-            // expected: 'outcome is: 6'
-            //           'outcome is: 2'
-            // actual: 'outcome is: 398'
-            //         'outcome is: 394'
-            console.log(number)
+        if (number <= 10) {
+            console.log('4th if, additionsArray is: ' + additionsArray)
+            var outcome = newResult - number
+         
+            console.log('4th if, result is : ' + newResult)
+            console.log('4th if, outcome is: '+ outcome)
+        }
+        if (additionsArray.includes(outcome)) {
+            // console.log(outcome)
+            console.log('6th if')
         }
     }
 }
 
-numbersSolver(800, [100, 2, 6])
+numbersSolver(800, [2, 6, 100])
 // numbersSolver(900, [100, 8, 100])
 module.exports = { getFactors, getAdditions, getSubtractions, getMultiples, numbersSolver };

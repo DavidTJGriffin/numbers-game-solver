@@ -1,0 +1,216 @@
+target = 800
+100, 8
+
+800 -> [2, 2, 2, 2, 5]
+800 -> [1, 800, 80, 10, 400, 2, 100, 8, ...]
+100, 8 
+
+if (list.includes(100))
+	//do something
+	take target/100
+	see if the result is also in the list
+	if (list.includes(8))
+		then the operation is 8*100
+
+//////////////////////////////////////////////////////
+
+		
+target = 800
+100, 2, 6
+
+800 -> [1, 800, 80, 10, 400, 2, 100, 8, ...]
+
+if (list.includes(100))
+	//do something
+	take target/100
+	see if the result is also in the list
+	its not
+	target/100 -> 8
+	can we get 8?
+	take the factors of 8 -> [1,2,4,8]
+	take the additions of 8 -> [1,2,3,4,5,6,7,8]
+	if (list.includes(2))
+		//do 8-2
+		8-2 -> 6
+		if (numbers.includes(6))
+			the result is (6+2)*100
+			
+///////////////////////////////////////////////////////
+
+975
+if(list.includes())
+	195
+	if(list.includes())
+		39
+		if(list.includes())
+			13
+			if(list.includes())
+			
+//////////////////////////////////////////////////////
+
+target = 807
+100, 2, 6, 7
+
+807 -> [1, 807]
+
+if (list.includes(100))
+	//it doesnt
+	807 / 100 = 8
+	807 % 100 = 7
+do 807 % 100 = 7
+if numbers.includes(7)
+	take 807 - 7 -> 800
+	do all that stuff again
+	solution: (6+2)*100 + 7
+	
+/////////////////////////////////////////////////////
+
+target = 807
+100, 2, 6, 2, 5
+
+807 -> [1, 807]
+
+if (list.includes(100))
+	//it doesnt
+	807 % 100 = 7
+if numbers.includes(7)
+	//it doesnt
+	additions of 7 -> [1,2,3,4,5,6,7]
+	additions.includes(2)
+	7 - 2 = 5
+	//do all that stuff
+	solution: (6+2) * 100 + (2 + 5)
+	
+////////////////////////////////////////////////////
+
+target = 809
+100, 2, 6, 6
+
+807 -> [1, 809]
+
+if (list.includes(100))
+	//it doesnt
+	809 % 100 = 9
+	if (numbers.includes(9)
+		//it doesnt
+		additions of 9 -> 01,2,3,4,5,6,7,8,9]
+		additions.includes(2)
+		9 - 2 = 7
+		numbers.includes(7)
+		//it doesnt
+		9 - 6 = 3
+		numbers.includes(3)
+		//it doesnt
+		just do 800-9 anyways -> 800
+		take 800/100...
+		// same as before
+		result: (6+2) * 100 = 800 (9 away)
+		
+//////////////////////////////////////////////////
+
+target = 800
+100, 10, 2
+
+800 -> [1, 800, 80, 10, 400, 2, 100, 8, ...]
+
+
+if (list.includes(100))
+	//it does
+	new target = 800 /100 = 8
+	factors of 8 -> [1,2,4,8]
+	//includes 2, but we dont have 4
+	additions of 8 -> [1,2,3,4,5,6,7,8]
+	// includes 2, but we dont have 6
+	subtractions of 8 -> [10,2,9,1]
+		try 10-8 =2 
+		try 9-8 =1
+		stop because 8-8 doesnt help
+		10-8 = 2
+		numbers.includes(2)
+		result: (10-2) * 100
+		
+////////////////////////////////////////////////////
+
+target = 500
+100, 10, 2
+
+500 -> [1, 500, 100, 5, ...]
+
+if (list.includes(100))
+	//it does
+	new target = 500 / 100 = 5
+	factors of 5 -> [1,5]
+	//numbers doesnt include 1 or 5
+	additions of 5 -> [1,2,3,4,5]
+	//numbers includes 2 but not 3
+	subtractions of 5 -> [10,9,8,7,6,5,5,4,3,2,1]
+	//numbers includes 10 but not 5
+	divisions of 5 -> [10, 5, 2, 1]
+	//numbers includes 10
+	10/5 = 2
+	//numbers includes 2
+	result: (10/2) * 100
+	
+///////////////////////////////////////////////////////////
+	
+additions of 1 -> 
+additions of 2 -> 
+additions of 3 -> 
+additions of 4 -> 
+additions of 5 -> 
+additions of 6 -> 
+additions of 7 -> 
+additions of 8 -> 
+additions of 9 -> 
+additions of 10 -> 
+
+factions of 1 -> 
+factions of 2 -> 
+factions of 3 -> 
+factions of 4 -> 
+factions of 5 -> 
+factions of 6 -> 
+factions of 7 -> 
+factions of 8 -> 
+factions of 9 -> 
+factions of 10 -> 
+
+subractions...
+
+divisions...
+
+	
+divisions of 4 -> [100, 25, 8, 2, 4, 1]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
