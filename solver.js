@@ -76,6 +76,8 @@ function numbersSolver(target, numberList) {
     var result;
     var number;
     var newResult;
+    var number1;
+    var number2;
     getFactors(target)
     for (let index = 0; index < numberList.length; index++) {
         number = numberList[index];
@@ -100,9 +102,11 @@ function numbersSolver(target, numberList) {
             console.log('4th if, result is : ' + newResult)
             console.log('4th if, outcome is: '+ outcome)
         }
-        if (additionsArray.includes(outcome)) {
+        if (additionsArray.includes(outcome) && result <= 10) {
             // console.log(outcome)
-            console.log('6th if')
+            var number1 = newResult - outcome 
+            var number2 = newResult - number1
+            return `(${number1}+${number2})*${result}`
         }
     }
 }
