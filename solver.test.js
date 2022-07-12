@@ -253,6 +253,12 @@ describe('solve problem correctly', () => {
 		
 		expect(numbersSolver(target, nums)).toEqual('(6+2)*100');
 	});
+	test('807, [100, 8, 7]', () => {
+		let target = 807;
+		let nums = [100, 8, 7];
+		
+		expect(numbersSolver(target, nums)).toEqual('8*100+7');
+	});
 	
 	test('807, [100, 2, 6, 7]', () => {
 		let target = 807;
