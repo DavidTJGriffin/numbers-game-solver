@@ -124,39 +124,39 @@ describe('get additions correctly', () => {
 
 describe('get subtractions correctly', () => {
 	test('finds subtractions of 1', () => {
-		expect(getSubtractions(1)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+		expect(getSubtractions(1)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9]);
 	});
 	
 	test('finds subtractions of 2', () => {
-		expect(getSubtractions(2)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+		expect(getSubtractions(2)).toEqual([1, 2, 3, 4, 5, 6, 7, 8]);
 	});
 	
 	test('finds subtractions of 3', () => {
-		expect(getSubtractions(3)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+		expect(getSubtractions(3)).toEqual([1, 2, 3, 4, 5, 6, 7]);
 	});
 	
 	test('finds subtractions of 4', () => {
-		expect(getSubtractions(4)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+		expect(getSubtractions(4)).toEqual([1, 2, 3, 4, 5, 6]);
 	});
 	
 	test('finds subtractions of 5', () => {
-		expect(getSubtractions(5)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+		expect(getSubtractions(5)).toEqual([1, 2, 3, 4, 5]);
 	});
 	
 	test('finds subtractions of 6', () => {
-		expect(getSubtractions(6)).toEqual([1, 2, 3, 4, (6), 7, 8, 9, 10]);
+		expect(getSubtractions(6)).toEqual([1, 2, 3, 4]);
 	});
 	
 	test('finds subtractions of 7', () => {
-		expect(getSubtractions(7)).toEqual([1, 2, 3, (7), 8, 9, 10]);
+		expect(getSubtractions(7)).toEqual([1, 2, 3]);
 	});
 	
 	test('finds subtractions of 8', () => {
-		expect(getSubtractions(8)).toEqual([1, 2, (8), 9, 10]);
+		expect(getSubtractions(8)).toEqual([1, 2]);
 	});
 	
 	test('finds subtractions of 9', () => {
-		expect(getSubtractions(9)).toEqual([1, (9), 10]);
+		expect(getSubtractions(9)).toEqual([1]);
 	});
 	
 	test('finds subtractions of 10', () => {

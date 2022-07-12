@@ -6,7 +6,7 @@ let subtractionsArray = []
 // let operationsText = document.getElementById('operation')
 
 // let result = [];
-
+let target = 800;
 let resultFactors = [];
 
 function getFactors(number) {
@@ -39,23 +39,20 @@ function getSubtractions(number) {
     // a - b = 6
 
     smallNumbers.forEach(element => {
-        result = element - number
-    });
-    if (smallNumbers.includes(result)) {
 
-    }
-    // for (let index = 0; index < smallNumbers.length; index++) {
-    //     var element = smallNumbers[index];
-    //     result = Math.abs(element - number)
-    //     if (smallNumbers.includes(result) && result != 0) {
-    //         subtractionsArray.push(element)
-    //     }
-    // }
+        result = element - number
+        if (result > 0 && result <= 10) {
+            subtractionsArray.push(result)
+        }
+    });
+
     if (number >= 10) {
         return [number]
     }
     return subtractionsArray;
 };
+getSubtractions(1)
+console.log(subtractionsArray)
 
 function getMultiples(number) {
     multiplesDivider = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 25, 50, 75, 100];
@@ -70,9 +67,10 @@ function getMultiples(number) {
     return multiplesArray;
 }
 getSubtractions(6)
-// var numbers = []
-// var operationString = ''
+var numbers = []
+var operationString = ''
 function numbersSolver(target, numberList) {
+
     var result;
     var number;
     var newResult;
@@ -103,7 +101,7 @@ function numbersSolver(target, numberList) {
             console.log('4th if, outcome is: '+ outcome)
         }
         if (additionsArray.includes(outcome) && result <= 10) {
-            // console.log(outcome)
+            console.log('function is reached')
             var number1 = newResult - outcome 
             var number2 = newResult - number1
             return `(${number1}+${number2})*${result}`
